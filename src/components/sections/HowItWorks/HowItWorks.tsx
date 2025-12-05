@@ -3,7 +3,8 @@ import {
   Cog6ToothIcon,
   CurrencyDollarIcon,
   ChartBarSquareIcon,
-  SparklesIcon
+  SparklesIcon,
+  ArrowLongRightIcon
 } from '@heroicons/react/24/outline';
 
 export default function HowItWorks() {
@@ -35,7 +36,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-24 px-6 bg-gradient-to-b from-white via-gray-50/50 to-white">
       <div className="max-w-7xl mx-auto">
         {/* En-tête */}
         <div className="text-center mb-20">
@@ -51,61 +52,61 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* Étapes avec ligne verticale connectée */}
-        <div className="max-w-4xl mx-auto">
+        {/* Étapes avec flèches */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6 items-start">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
-            const isLast = index === steps.length - 1;
-            
             return (
-              <div key={index} className="relative flex gap-8 pb-16 last:pb-0">
-                {/* Ligne verticale de connexion */}
-                {!isLast && (
-                  <div className="absolute left-6 top-14 bottom-0 w-0.5 bg-gradient-to-b from-emerald-300 to-emerald-100"></div>
+              <div key={index} className="flex flex-col items-center relative">
+                {/* Flèche entre les étapes (desktop uniquement) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-12 -right-8 z-0">
+                    <ArrowLongRightIcon className="h-6 w-16 text-emerald-200" />
+                  </div>
                 )}
 
-                {/* Cercle numéroté */}
-                <div className="relative flex-shrink-0 z-10">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <span className="text-white font-bold text-xl">{step.number}</span>
+                {/* Cercle avec icône et effet hover */}
+                <div className="relative group mb-6 cursor-pointer">
+                  <div className="w-28 h-28 rounded-full bg-gradient-to-b from-white via-emerald-50/40 to-white border-2 border-gray-200 flex items-center justify-center group-hover:border-emerald-400 group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative z-10">
+                    <IconComponent className="h-12 w-12 text-emerald-600 group-hover:text-emerald-700 transition-colors" />
                   </div>
+                  
+                  {/* Badge numéro avec animation */}
+                  <div className="absolute -top-2 -right-2 w-9 h-9 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-300 z-20">
+                    <span className="text-white font-bold text-sm">{step.number}</span>
+                  </div>
+
+                  {/* Glow effect en hover */}
+                  <div className="absolute inset-0 rounded-full bg-emerald-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
 
-                {/* Contenu de l'étape avec card */}
-                <div className="flex-1 group">
-                  <div className="p-8 rounded-2xl border border-gray-200 bg-gradient-to-b from-white via-emerald-50/20 to-white hover:border-emerald-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div className="flex items-start gap-6">
-                      {/* Icône */}
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 rounded-xl bg-emerald-100 flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
-                          <IconComponent className="h-8 w-8 text-emerald-600" />
-                        </div>
-                      </div>
-
-                      {/* Texte */}
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                          {step.title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                {/* Contenu texte */}
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed max-w-xs">
+                    {step.description}
+                  </p>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-16">
+        {/* Séparateur décoratif */}
+        <div className="flex items-center justify-center my-16">
+          <div className="h-px w-32 bg-black border-2"></div>
+        </div>
+
+        {/* CTA amélioré */}
+        <div className="text-center">
           <p className="text-lg text-gray-700 mb-6 font-medium">
             Prêt à transformer ta gestion financière ?
           </p>
-          <button className="px-10 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-            Commencer maintenant
+          <button className="px-10 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center gap-2 group">
+            <span>Commencer maintenant</span>
+            <ArrowLongRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </button>
           <p className="text-sm text-gray-500 mt-4">
             Gratuit • Sans carte bancaire • Prêt en 2 minutes
