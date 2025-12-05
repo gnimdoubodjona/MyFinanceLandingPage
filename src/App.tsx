@@ -5,6 +5,7 @@ import './App.css'
 import Hero from './components/sections/Hero/Hero'
 import Layout from './Layout'
 import Features from './components/sections/Features/Features'
+import HowItWorks from './components/sections/HowItWorks/HowItWorks'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Layout>
         <Hero/>
         <Features/>
+        <HowItWorks/>
       </Layout>
     </>
   )

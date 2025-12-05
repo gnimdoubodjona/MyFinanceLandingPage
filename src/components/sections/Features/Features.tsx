@@ -49,24 +49,7 @@ export default function FeaturesPage() {
       description: "Découvre ton revenu moyen, taux d'épargne et répartition de tes dépenses essentielles vs non-essentielles. Des insights pour mieux dépenser.",
       gradient: "from-emerald-500 to-teal-600"
     },
-    {
-      icon: BellAlertIcon,
-      title: "Notifications intelligentes",
-      description: "Reçois des alertes pour tes budgets dépassés, dettes à rembourser et objectifs atteints. Reste informé en temps réel.",
-      gradient: "from-emerald-500 to-teal-600"
-    },
-    {
-      icon: CalendarIcon,
-      title: "Rapports mensuels",
-      description: "Obtiens un rapport détaillé chaque mois avec statistiques complètes et score de discipline financière. Export PDF disponible.",
-      gradient: "from-emerald-500 to-teal-600"
-    },
-    {
-      icon: ClipboardDocumentCheckIcon,
-      title: "PWA & offline",
-      description: "Application installable sur mobile et desktop. Consulte tes données même sans connexion internet. Synchronisation automatique.",
-      gradient: "from-emerald-500 to-teal-600"
-    }
+
   ];
 
   return (
@@ -77,7 +60,7 @@ export default function FeaturesPage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-full mb-4">
               <SparklesIcon className="h-4 w-4 text-emerald-600" />
-              <span className="text-sm font-semibold text-emerald-700">Fonctionnalités</span>
+              <span className="text-sm font-semibold text-emerald-700">Que proposons nous? </span>
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
               Tout ce dont tu as besoin
@@ -94,7 +77,7 @@ export default function FeaturesPage() {
               return (
                 <div 
                   key={index}
-                  className="group p-8 border border-black rounded-xl bg-gradient-to-b from-white via-emerald-50/30 to-white text-left hover:shadow-xl hover:border-black transition-all duration-300 hover:-translate-y-1"
+                  className="group p-8 border-2 border-black rounded-xl bg-gradient-to-b from-white via-emerald-50/30 to-white text-left hover:shadow-xl hover:border-black transition-all duration-300 hover:-translate-y-1"
                 >
                   {/* Icône avec gradient */}
                   <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${feature.gradient} mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -115,7 +98,7 @@ export default function FeaturesPage() {
             })}
           </div>
 
-          {/* Call to action en bas */}
+          {/* Call to action en bas
           <div className="text-center mt-16">
             <p className="text-lg text-gray-600 mb-6">
               Prêt à transformer ta gestion financière ?
@@ -124,7 +107,7 @@ export default function FeaturesPage() {
               <SparklesIcon className="h-5 w-5" />
               Commencer maintenant
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

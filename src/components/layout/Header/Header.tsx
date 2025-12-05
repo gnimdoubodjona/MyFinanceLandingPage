@@ -1,4 +1,4 @@
-import { 
+import {
   WalletIcon,
   SparklesIcon,
   InformationCircleIcon,
@@ -20,12 +20,12 @@ export default function Header() {
   }, []);
 
   return (
-    <header 
+    <header
       className={`
         fixed top-0 left-0 right-0 z-50 mx-auto mt-4 max-w-7xl
         flex items-center justify-between px-8 py-4 
         backdrop-blur-md bg-white/70 
-        border border-emerald-100/50
+        border-2 border-black
         rounded-2xl
         transition-all duration-300
         ${isScrolled ? 'shadow-lg bg-white/80' : 'shadow-sm'}
@@ -46,7 +46,7 @@ export default function Header() {
             Que proposons-nous ?
           </li>
           <li className="text-gray-700 hover:text-emerald-600 cursor-pointer transition-colors duration-200 font-medium">
-            À propos de nous
+            Comment ça marche?
           </li>
           <li className="text-gray-700 hover:text-emerald-600 cursor-pointer transition-colors duration-200 font-medium">
             Contactez-nous
