@@ -6,6 +6,8 @@ import Hero from './components/sections/Hero/Hero'
 import Layout from './Layout'
 import Features from './components/sections/Features/Features'
 import HowItWorks from './components/sections/HowItWorks/HowItWorks'
+import TargetAudience from './components/sections/TargetAudience/TargetAudience'
+import Testimonials from './components/sections/Testimonials/Testimonials'
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Hero/>
         <Features/>
         <HowItWorks/>
+        <Testimonials/>
       </Layout>
     </>
   )

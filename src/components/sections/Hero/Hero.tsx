@@ -22,7 +22,7 @@ export default function Hero() {
     ];
 
     return (
-        <section className="min-h-screen pt-20 pb-20 px-6 bg-gradient-to-b ">
+        <section className="min-h-screen pt-20 pb-20  ">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
 

@@ -53,7 +53,7 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <div className="bg-white py-20 px-6">
+    <div className="bg-gradient-to-br from-emerald-50 via-white to-emerald-50/30 py-20 px-6">
       <section className="bg-white">
         <div className="max-w-7xl mx-auto">
           {/* En-tête de section */}
